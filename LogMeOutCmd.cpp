@@ -57,6 +57,12 @@ int _tmain(int argc, _TCHAR* argv[])
 			}
 		}
 
+		/*disable CTRL+C*/
+		if (!SetConsoleCtrlHandler(NULL, TRUE)) {
+			printf("\nERROR: Could not set control handler");
+			return 1;
+		}
+
 		/* wait  30 min. */
 		DWORD now = GetTickCount();
 
